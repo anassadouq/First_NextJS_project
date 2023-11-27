@@ -11,20 +11,15 @@ async function getData() {
 }
 
 export default async function Blog() {
-
-    const data = await getData()
-    const products = data.products
+    const data = await getData();
+    const products = data.products;
     return (
         <div className={styles.container}>
             {
                 products.map(product => (
                     <Link href={`/blog/${product.id}`} className={styles.post} key={product.id}>
                         <div className={styles.imageContainer}>
-                            <Image
-                                className={styles.image}
-                                src={product.thumbnail}
-                                width={350} height={250}
-                            />
+                            <Image className={styles.image} src={product.thumbnail} width={350} height={250}/>
                         </div>
                         <div className={styles.content}>
                             <h1 className={styles.title}>{product.title}</h1>
@@ -34,6 +29,5 @@ export default async function Blog() {
                 ))
             }
         </div>
-        
     )
 }

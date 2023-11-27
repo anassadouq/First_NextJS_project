@@ -1,9 +1,8 @@
-import './globals.css'
-
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-
+import './globals.css'
 import { Montserrat } from 'next/font/google'
+
 const bodyFont = Montserrat({ 
   subsets: ['latin'],
   weight: ['400'],
@@ -16,7 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body className={bodyFont.className}>
         <div className='container'>
           <Navbar/>
